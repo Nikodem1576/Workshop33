@@ -1,9 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--@elvariable id="ofUsers" type="java"--%>
+<%--@elvariable id="user" type="java"--%>
+<%--@elvariable id="userToRead" type="java"--%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ include file="/header.jsp" %>
+
+<!DOCTYPE html>
+<html lang="en">
 
 
 
@@ -13,12 +17,58 @@
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">User List</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        <a href="/user/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Dodaj uzytkownika</a>
                     </div>
-
-
             </div>
+
+
+
+
+<!-- Table with users N -->
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">Nazwa użytkownika</th>
+        <th scope="col">Email</th>
+        <th scope="col">Akcja</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    <form action = "/user/list" method="get">
+    <tr>
+        <c:forEach items ="${ofUsers}" var ="user">
+            <tr>
+        <th scope="row">${user.id}</th>
+        <td>${user.userName}</td>
+        <td>${user.email}</td>
+        <td><a href = ""> Usuń </a><a>&nbsp;</a><a href = "">Edit</a><a>&nbsp;</a> <a href="">Pokaż</a></td>
+            </tr>
+        </c:forEach>
+    </tr>
+
+    </form>
+
+    </tbody>
+</table>
+<%--    <tr>--%>
+<%--        <th scope="row">2</th>--%>
+<%--        <td>Jacob</td>--%>
+<%--        <td>Thornton</td>--%>
+<%--        <td>@fat</td>--%>
+<%--    </tr>--%>
+<%--    <tr>--%>
+<%--        <th scope="row">3</th>--%>
+<%--        <td>Larry</td>--%>
+<%--        <td>the Bird</td>--%>
+<%--        <td>@twitter</td>--%>
+<%--    </tr>--%>
+
+
+
             <!-- End of Main Content -->
 
 <%@ include file="/footer.jsp" %>
