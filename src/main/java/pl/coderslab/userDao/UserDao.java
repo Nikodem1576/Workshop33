@@ -130,21 +130,7 @@ public User[] findAll() {
 
             findAllArray = addToArray(user, findAllArray);
 
-
-
         }
-
-
-
-//            ResultSet rS = pStat.executeQuery();
-//        while (rS.next()){
-//            User user = new User();
-//            int id = rS.getInt("id");
-//            String user = rS.getString("username");
-//            String email = rS.getString("email");
-//            String pass= rS.getString("password");
-//
-//            System.out.println(id + " " + " " + user + " " + " " + email + " " + " " + pass );
 
     }catch (SQLException ex) {
            ex.printStackTrace();
@@ -153,11 +139,6 @@ public User[] findAll() {
        return findAllArray;}
 
 }
-
-
-//private User[] addToArray(User u, User[] users);
-
-
 
 
 
