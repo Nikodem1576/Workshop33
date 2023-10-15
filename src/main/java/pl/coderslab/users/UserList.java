@@ -45,7 +45,7 @@ for (User x : listOfUsers) {
 
 }
 
-        System.out.println(ofUsers);
+
 
 req.setAttribute("ofUsers", ofUsers);
 
