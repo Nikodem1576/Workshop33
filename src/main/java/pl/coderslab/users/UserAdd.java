@@ -41,7 +41,7 @@ public class UserAdd extends HttpServlet {
 
         userDao.create(user);
 
-        resp.sendRedirect("/user/list");
+        resp.sendRedirect(req.getContextPath() + "/user/list");
 
     }
 
